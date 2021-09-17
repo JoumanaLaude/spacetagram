@@ -1,38 +1,41 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Vidaloka&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
   text-align: center;
+  font-family: 'Lato', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-family: 'Vidaloka', serif;
+  font-size: 1.4rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container {
+  margin: 15px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-basis: 100%;
+  flex: 1;
+  padding-top: 4rem;
 }
 
-.App-link {
-  color: #61dafb;
+.video {
+  width: 400px;
+  height: 300px
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* adjust for resp view */

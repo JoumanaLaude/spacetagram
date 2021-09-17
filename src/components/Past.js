@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
+import styled from 'styled-components';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 const apiKey = process.env.REACT_APP_APOD_KEY;
 const start = "2021-09-01";
@@ -23,34 +26,47 @@ export default function Past() {
 
     return (
         <>
-            <Navbar />
-            <h1>{imgData.date}</h1>
-            <h1>Search through past pictures: </h1>
+            <div className="container">
+                <Navbar />
 
-            <div>
-                {imgData.slice().reverse().map((imgData, index) => (
-                    <div>
-                        {imgData.date}
+                <br /><h1>Search through past pictures: </h1><br />
+                <input type="text"></input> <button>Search</button>
 
-                        {imgData.media_type === 'image' ? (<img key={index} src={imgData.url} alt={imgData.title} />) : (
-                            // <iframe
-                            //     title='space-video'
-                            //     src={imgData.url}
-                            //     frameBorder='0'
-                            //     gesture='media'
-                            //     allow='encrypted-media'
-                            // />
-                            <a href={imgData.url}>Click for video!</a> // make this pop out or something
-                        )}
-
-                        {imgData.title} <br />
-                        {/* explanation on click v */}
-                        {imgData.explanation}
-
+                <div className="row">
+                    <div className="column">
+                        {imgData.slice().reverse().map((imgData, index) => (
+                            <Container key={index} >
+                                {imgData.media_type === 'image' ? (<Img src={imgData.url} alt={imgData.title} />) : (
+                                    <iframe
+                                        title='space-video'
+                                        src={imgData.url}
+                                        frameBorder='0'
+                                        gesture='media'
+                                        allow='encrypted-media'
+                                        className='video'
+                                    />
+                                )}
+                                <br />
+                                <h1>{imgData.title} <FontAwesomeIcon icon={faStar} className="fa-1x" /></h1>
+                                {imgData.date}
+                            </Container>
+                        ))}
                     </div>
-                ))}
-            </div>
+                </div>
 
+            </div>
         </>
     )
 }
+
+const Img = styled.img`
+    width: 410px;
+    padding-top: 4rem;
+`;
+// max-width: 30%;
+// make max-width higher in resp view
+
+const Container = styled.div`
+    padding: 0;
+    margin: 0;
+`;

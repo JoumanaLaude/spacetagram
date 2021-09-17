@@ -3,7 +3,7 @@ import Navbar from './Navbar';
 
 const apiKey = process.env.REACT_APP_APOD_KEY;
 
-export default function FetchAPOD() {
+export default function Today() {
 
     const [imgData, setImgData] = useState(null);
 
@@ -24,7 +24,7 @@ export default function FetchAPOD() {
         <>
         <Navbar />
             <h1>{imgData.date}</h1>
-            <h1>Today's Picture: {imgData.title}</h1>
+            <h1>Today from NASA:<br />{imgData.title}</h1>
 
             <div>
                 {/* some days have videos instead of images */}
@@ -36,7 +36,6 @@ export default function FetchAPOD() {
                         gesture='media'
                         allow='encrypted-media'
                         allowFullScreen
-                        className=''
                     />
                 )}
             </div>
