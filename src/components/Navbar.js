@@ -11,12 +11,10 @@ export default function Navbar() {
 
     return (
         <Navigation>
-            
-                <Link to='#' className="menu-bars">
-                    <FontAwesomeIcon icon={faBars} className="fa-2x" onClick={showMenu} />
-                </Link>
-                <Title>Spacetagram</Title>
-                
+            <Link to='#' className="menu-bars">
+                <FontAwesomeIcon icon={faBars} className="fa-2x" onClick={showMenu} />
+            </Link>
+            <Link to="/"><Title>Spacetagram</Title></Link>
             <nav className={isOpen ? 'nav-menu active' : 'nav-menu'}>
                 <ul className="nav-links">
                     <NavItem>
@@ -26,9 +24,8 @@ export default function Navbar() {
                     </NavItem>
                     <NavItem><Link to="/"><FontAwesomeIcon icon={faSatellite} /> Today</Link></NavItem>
                     <NavItem><Link to="/past"><FontAwesomeIcon icon={faMeteor} /> Past</Link></NavItem>
-                    <NavItem><Link to="/past"><FontAwesomeIcon icon={faStar} /> Saved</Link></NavItem>
-                    <NavItem><Link to="/past"><FontAwesomeIcon icon={faRocket} /> About</Link></NavItem>
-                    {/* make navdata component ? */}
+                    <NavItem><Link to="/"><FontAwesomeIcon icon={faStar} /> Saved</Link></NavItem>
+                    <NavItem><Link to="/"><FontAwesomeIcon icon={faRocket} /> About</Link></NavItem>
                 </ul>
             </nav>
         </Navigation>
