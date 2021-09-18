@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { Link } from "react-router-dom";
+import ModalImage from "react-modal-image";
 
 const apiKey = process.env.REACT_APP_APOD_KEY;
 // const start = "2021-09-01";
@@ -34,7 +35,16 @@ export default function Past() {
             <Grid>
                 {imgData.slice().reverse().map((imgData, index) => (
                     <Media key={index} >
-                        {imgData.media_type === 'image' ? (<Img src={imgData.url} alt={imgData.title} />) : (
+                        {imgData.media_type === 'image' ? (
+                            <ModalImage
+                                small={imgData.url}
+                                large={imgData.hdurl}
+                                hideDownload={true}
+                                showRotate={true}
+                                alt={imgData.title}
+                                className='image'
+                            />
+                        ) : (
                             <iframe
                                 title='space-video'
                                 src={imgData.url}
@@ -73,15 +83,6 @@ const Media = styled.div`
 
     @media only screen and (max-width: 700px) {
     font-size: 1rem;
-    }
-`
-
-const Img = styled.img`
-    width: 410px;
-    border-radius: 10px 30px;
-
-    @media only screen and (max-width: 1000px) {
-        max-width: 100%;
     }
 `;
 
