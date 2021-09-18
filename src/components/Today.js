@@ -21,8 +21,8 @@ export default function Today() {
     if (!imgData) return <div>Loading...<br /><br />"At the Smithsonian Air & Space Museum you can touch a real moon rock!"</div>;
 
     return (
-        <>
-        <Navbar />
+        <main>
+            <Navbar />
             <h1>{imgData.date}</h1>
             <h1>Today from NASA:<br />{imgData.title}</h1>
 
@@ -36,10 +36,10 @@ export default function Today() {
                         gesture='media'
                         allow='encrypted-media'
                         allowFullScreen
+                        className='video'
                     />
                 )}
             </div>
-
-        </>
+        </main>
     )
 }

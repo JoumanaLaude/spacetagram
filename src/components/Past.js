@@ -26,47 +26,57 @@ export default function Past() {
 
     return (
         <>
-            <div className="container">
-                <Navbar />
-
-                <br /><h1>Search through past pictures: </h1><br />
-                <input type="text"></input> <button>Search</button>
-
-                <div className="row">
-                    <div className="column">
-                        {imgData.slice().reverse().map((imgData, index) => (
-                            <Container key={index} >
-                                {imgData.media_type === 'image' ? (<Img src={imgData.url} alt={imgData.title} />) : (
-                                    <iframe
-                                        title='space-video'
-                                        src={imgData.url}
-                                        frameBorder='0'
-                                        gesture='media'
-                                        allow='encrypted-media'
-                                        className='video'
-                                    />
-                                )}
-                                <br />
-                                <h1>{imgData.title} <FontAwesomeIcon icon={faStar} className="fa-1x" /></h1>
-                                {imgData.date}
-                            </Container>
-                        ))}
-                    </div>
-                </div>
-
-            </div>
+            <Navbar />
+            <br /><h1>Search through time: </h1><br />
+            <input type="text"></input> <button>Search</button>
+            <Grid>
+                {imgData.slice().reverse().map((imgData, index) => (
+                    <Media key={index} >
+                        {imgData.media_type === 'image' ? (<Img src={imgData.url} alt={imgData.title} />) : (
+                            <iframe
+                                title='space-video'
+                                src={imgData.url}
+                                frameBorder='0'
+                                gesture='media'
+                                allow='encrypted-media'
+                                className='video'
+                            />
+                        )}
+                        <br />{imgData.date}
+                        <Title>{imgData.title} <FontAwesomeIcon icon={faStar} className="fa-1x" /></Title>
+                    </Media>
+                ))}
+            </Grid>
         </>
     )
 }
 
+const Grid = styled.div`
+    display: grid;
+    grid-row: 2 / auto;
+    grid-column: 2 / 4;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1.4rem;
+
+    @media only screen and (max-width: 1000px) {
+        grid-template-columns: 1fr;
+    }
+`;
+
+const Media = styled.div`
+    font-size: 1.2rem;
+    padding: 2rem;
+`
+
 const Img = styled.img`
     width: 410px;
-    padding-top: 4rem;
-`;
-// max-width: 30%;
-// make max-width higher in resp view
+    border-radius: 10px 30px;
 
-const Container = styled.div`
-    padding: 0;
-    margin: 0;
+    @media only screen and (max-width: 1000px) {
+        max-width: 100%;
+    }
+`;
+
+const Title = styled.h1`
+    padding-top: 10px;
 `;

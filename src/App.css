@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Vidaloka&display=swap');
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -8,34 +9,81 @@
 body {
   text-align: center;
   font-family: 'Lato', sans-serif;
+  background-color: #1b1725;
+  color: #d1ccdc;
 }
 
 h1 {
   font-family: 'Vidaloka', serif;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
+  font-weight: 400;
 }
 
-.container {
-  margin: 15px;
-}
-
-.row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+.photo-wrapper {
+  display: block;
   width: 100%;
-}
-
-.column {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 100%;
-  flex: 1;
-  padding-top: 4rem;
+  background-color: white;
 }
 
 .video {
   width: 400px;
-  height: 300px
+  height: 300px;
+  border-radius: 10px 30px;
 }
-/* adjust for resp view */
+
+ul {
+  display: flex;
+}
+
+a, a:active, a:visited {
+  text-decoration: none;
+  color: #1b1725;
+}
+
+a:hover {
+  opacity: .6;
+  transition: 500ms;
+}
+
+.nav-links {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+@media only screen and (max-width: 700px) {
+  .nav-menu {
+    background: #d1ccdc;
+    border-right: 1px solid #1b1725;
+    border-bottom: 1px solid #1b1725;
+    top: 0;
+    left: -100%;
+    transition: 850ms;
+    padding-right: 1.4rem;
+    position: fixed;
+    z-index: 2;
+  }
+  .nav-menu.active {
+    left: 0;
+    transition: 500ms;
+  }
+  .nav-links {
+    font-size: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    padding-left: 1.4rem;
+    padding-bottom: 2rem;
+  }
+  .menu-bars {
+    position: absolute;
+    left: 4.2rem;
+  }
+  .video {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (min-width: 701px) {
+  .menu-bars, .menu-exit {
+    display: none;
+  }
+}
