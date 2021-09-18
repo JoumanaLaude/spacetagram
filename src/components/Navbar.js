@@ -11,9 +11,12 @@ export default function Navbar() {
 
     return (
         <Navigation>
-            <Link to='#' className="menu-bars">
-                <FontAwesomeIcon icon={faBars} className="fa-2x" onClick={showMenu} />
-            </Link>
+            
+                <Link to='#' className="menu-bars">
+                    <FontAwesomeIcon icon={faBars} className="fa-2x" onClick={showMenu} />
+                </Link>
+                <Title>Spacetagram</Title>
+                
             <nav className={isOpen ? 'nav-menu active' : 'nav-menu'}>
                 <ul className="nav-links">
                     <NavItem>
@@ -48,6 +51,14 @@ const NavItem = styled.li`
     @media only screen and (min-width: 701px) {
         font-size: 1.4rem;
         text-decoration: none;
-        padding: 3rem;
+        padding: 2rem;
     }
+`;
+
+const Title = styled.h2`
+    color: #1b1725;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
 `;
