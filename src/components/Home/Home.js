@@ -6,24 +6,17 @@ import styled from 'styled-components';
 export default function Home() {
     return (
         <>
-            <nav>
-                <Navbar />
-            </nav>
-            <main>
-                <Container>
-                    <h1>Spacetagram</h1>
-                    <Intro>A space to look at our universe.</Intro>
-                    <Today />
-                </Container>
+            <Navbar />
+            <main className="container">
+                <h1>Spacetagram</h1>
+                <Intro>A space to view our universe.</Intro>
+                <Today />
             </main>
         </>
     )
 }
 
-const Container = styled.div`
-    padding: 4rem 6rem;
-`;
-
 const Intro = styled.p`
-    padding: 2rem;
+    padding-bottom: 2rem;
+    font-style: italic;
 `;

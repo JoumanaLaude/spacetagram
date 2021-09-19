@@ -5,7 +5,9 @@ export default function Favorites() {
     return (
         <>
             <Navbar />
-            <h1>Favorites</h1>
+            <main className="container">
+                <h1>Favorites</h1>
+            </main>
         </>
     )
 }

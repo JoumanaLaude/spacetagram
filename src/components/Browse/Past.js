@@ -3,15 +3,12 @@ import styled from 'styled-components';
 import ModalImage from "react-modal-image";
 import Star from '../Favorites/Star';
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faComment, faShare } from '@fortawesome/free-solid-svg-icons';
 
 const apiKey = process.env.REACT_APP_APOD_KEY;
 
 export default function Past() {
     const [imgData, setImgData] = useState(null);
 
-    // prevent memory leak??
     useEffect(() => {
         const abortController = new AbortController();
         const opts = { signal: abortController.signal };
@@ -20,7 +17,6 @@ export default function Past() {
             .then((response) => response.json())
             .then((data) => setImgData(data))
             .catch((error) => console.log(error.message));
-
         return () => abortController.abort();
     }, []);
 
@@ -28,52 +24,37 @@ export default function Past() {
 
     return (
         <>
-            {/* <Navbar />
-
-            <h1>Search through time: </h1><br />
-            <input type="text"></input>
-            <button>Search</button><br />
-
             <Link to="/past" onClick={() => window.location.reload()}>
-                <button>Refresh</button>
-            </Link> */}
-
+                <button>Randomize!</button>
+            </Link>
             <Grid>
-                {imgData.slice().reverse().map((imgData, index) => (
-                    <Media key={index}>
-                        {imgData.media_type === 'image' ? (
-                            <ModalImage
-                                small={imgData.url}
-                                large={imgData.hdurl}
-                                hideDownload={true}
-                                showRotate={true}
-                                alt={imgData.title}
-                                className='image'
-                            />
-                        ) : (
-                            <iframe
-                                title='space-video'
-                                src={imgData.url}
-                                frameBorder='0'
-                                gesture='media'
-                                allow='encrypted-media'
-                                className='video'
-                            />
-                        )}
-                        <Title>{imgData.title}</Title>
-                        <p>{imgData.date}<br />
-                            {/* <FontAwesomeIcon icon={faStar} className="fa-2x icon star" /> */}
+                {imgData.map((imgData, index) => (
+                        <Media key={index}>
+                            {imgData.media_type === 'image' ? (
+                                <ModalImage
+                                    small={imgData.url}
+                                    large={imgData.hdurl}
+                                    hideDownload={true}
+                                    showRotate={true}
+                                    alt={imgData.title}
+                                    className='image'
+                                />
+                            ) : (
+                                <iframe
+                                    title='space-video'
+                                    src={imgData.url}
+                                    frameBorder='0'
+                                    gesture='media'
+                                    allow='encrypted-media'
+                                    className='video'
+                                />
+                            )}
+                            <p>{imgData.date}</p>
+                            <Title>{imgData.title}</Title>
                             <Star />
-                            <FontAwesomeIcon icon={faComment} className="fa-2x icon" />
-                            <FontAwesomeIcon icon={faShare} className="fa-2x icon" />
-                            {/* make this whole thing a component when done */}
-                        </p>
-                    </Media>
+                        </Media>
                 ))}
             </Grid>
-            <Link to="/past" onClick={() => window.location.reload()}>
-                <button>Refresh</button>
-            </Link>
         </>
     )
 }
@@ -101,8 +82,8 @@ const Media = styled.div`
     }
 `;
 
-const Title = styled.h1`
-    padding-top: 10px;
+const Title = styled.h3`
+    padding: 10px;
 
     @media only screen and (max-width: 700px) {
         font-size: 1.4rem;

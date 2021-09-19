@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import ModalImage from "react-modal-image";
 import Star from '../Favorites/Star';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faComment, faShare } from '@fortawesome/free-solid-svg-icons';
 
 const apiKey = process.env.REACT_APP_APOD_KEY;
 
@@ -26,9 +24,11 @@ export default function Today() {
 
     return (
         <section>
-            <h1>{imgData.date}</h1>
-            <h1>Today from NASA: {imgData.title}</h1>
-            <Media>
+            <Box>
+                <h1>{imgData.date}</h1>
+                <h1>Today from NASA: {imgData.title}</h1> 
+                <Star />
+
                 {imgData.media_type === 'image' ? (
                     <ModalImage
                         small={imgData.url}
@@ -49,15 +49,32 @@ export default function Today() {
                     />
                 )}
 
-                <Star />
-                <FontAwesomeIcon icon={faComment} className="fa-2x icon" />
-                <FontAwesomeIcon icon={faShare} className="fa-2x icon" />
-            </Media>
+                {/* include alt, author/credit, explanation, date */}
+                <Explanation>{imgData.explanation}</Explanation>
+                <p>Credit: {imgData.copyright}</p>
+
+                
+
+            </Box>
         </section>
     )
 }
 
-const Media = styled.div`
-    font-size: 1.2rem;
+const Explanation = styled.p`
     padding: 2rem;
+    line-height: 1.4rem;
+
+    @media only screen and (max-width: 1000px) {
+        display: none;
+    }
 `;
+
+const Box = styled.div`
+    width: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    @media only screen and (max-width: 1000px) {
+        width: 100%;
+    }
+`;
+

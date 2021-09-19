@@ -10,27 +10,29 @@ export default function Navbar() {
     const showMenu = () => setIsOpen(!isOpen);
 
     return (
-        <Navigation>
-            <Link to='#' className="menu-bars">
-                <FontAwesomeIcon icon={faBars} className="fa-2x" onClick={showMenu} />
-            </Link>
-            <Link to="/"><Title>Spacetagram</Title></Link>
-            <nav className={isOpen ? 'nav-menu active' : 'nav-menu'}>
-                <ul className="nav-links">
-                    <NavItem>
-                        <MenuClose>
-                            <Link to='#'>
-                                <FontAwesomeIcon icon={faTimes} onClick={showMenu} className="menu-exit fa-2x" />
-                            </Link>
-                        </MenuClose>
-                    </NavItem>
-                    <NavItem><Link to="/"><FontAwesomeIcon icon={faSatellite} /> Today</Link></NavItem>
-                    <NavItem><Link to="/browse"><FontAwesomeIcon icon={faMeteor} /> Past</Link></NavItem>
-                    <NavItem><Link to="/favorites"><FontAwesomeIcon icon={faStar} /> Favorites</Link></NavItem>
-                    <NavItem><Link to="/"><FontAwesomeIcon icon={faRocket} /> About</Link></NavItem>
-                </ul>
-            </nav>
-        </Navigation>
+        <header>
+            <Navigation>
+                <Link to='#' className="menu-bars">
+                    <FontAwesomeIcon icon={faBars} className="fa-2x" onClick={showMenu} />
+                </Link>
+                <Link to="/"><Title>Spacetagram</Title></Link>
+                <nav className={isOpen ? 'nav-menu active' : 'nav-menu'}>
+                    <ul className="nav-links">
+                        <NavItem>
+                            <MenuClose>
+                                <Link to='#'>
+                                    <FontAwesomeIcon icon={faTimes} onClick={showMenu} className="menu-exit fa-2x" />
+                                </Link>
+                            </MenuClose>
+                        </NavItem>
+                        <NavItem><Link to="/"><FontAwesomeIcon icon={faSatellite} /> Today</Link></NavItem>
+                        <NavItem><Link to="/browse"><FontAwesomeIcon icon={faMeteor} /> Past</Link></NavItem>
+                        <NavItem><Link to="/favorites"><FontAwesomeIcon icon={faStar} /> Favorites</Link></NavItem>
+                        <NavItem><Link to="/about"><FontAwesomeIcon icon={faRocket} /> About</Link></NavItem>
+                    </ul>
+                </nav>
+            </Navigation>
+        </header>
     )
 }
 
@@ -58,7 +60,8 @@ const MenuClose = styled.div`
     padding-bottom: 2rem;
 `;
 
-const Title = styled.h2`
+const Title = styled.h1`
+    font-size: 1.4rem;
     color: #1b1725;
     display: flex;
     justify-content: center;
@@ -66,6 +69,6 @@ const Title = styled.h2`
     padding-left: 20px;
     
     @media (max-width: 360px) {
-        font-size: 1.2rem;
+        font-size: 1rem;
         }
 `;

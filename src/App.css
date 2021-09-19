@@ -14,19 +14,17 @@ body {
 }
 
 h1 {
+  font-family: 'Vidaloka', cursive;
+}
+
+h2 {
   font-family: 'Comfortaa', cursive;
   font-size: 1.6rem;
   font-weight: 400;
 }
 
-h2 {
-  font-family: 'Vidaloka', cursive;
-}
-
-.photo-wrapper {
-  display: block;
-  width: 100%;
-  background-color: white;
+.container {
+  padding: 4rem 6rem;
 }
 
 .video {
@@ -66,8 +64,12 @@ a:hover {
   margin: 8px 10px 0 10px;
 }
 
+.star-toggle {
+  color: #ffee93;
+}
+
 .star {
-  color: grey;
+  opacity: .5;
 }
 
 .today {
@@ -117,5 +119,10 @@ a:hover {
 @media only screen and (min-width: 701px) {
   .menu-bars, .menu-exit {
     display: none;
+  }
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
