@@ -25,10 +25,10 @@ export default function Navbar() {
                                 </Link>
                             </MenuClose>
                         </NavItem>
-                        <NavItem><Link to="/"><FontAwesomeIcon icon={faSatellite} /> Today</Link></NavItem>
-                        <NavItem><Link to="/browse"><FontAwesomeIcon icon={faMeteor} /> Past</Link></NavItem>
-                        <NavItem><Link to="/favorites"><FontAwesomeIcon icon={faStar} /> Favorites</Link></NavItem>
-                        <NavItem><Link to="/about"><FontAwesomeIcon icon={faRocket} /> About</Link></NavItem>
+                        <NavItem><Link to="/"><FontAwesomeIcon icon={faSatellite} className="fa-fw" /> Today</Link></NavItem>
+                        <NavItem><Link to="/browse"><FontAwesomeIcon icon={faMeteor} className="fa-fw" /> Past</Link></NavItem>
+                        <NavItem><Link to="/stars"><FontAwesomeIcon icon={faStar} className="fa-fw" /> Stars</Link></NavItem>
+                        <NavItem><Link to="/about"><FontAwesomeIcon icon={faRocket} className="fa-fw" /> About</Link></NavItem>
                     </ul>
                 </nav>
             </Navigation>

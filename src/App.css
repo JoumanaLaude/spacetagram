@@ -30,7 +30,7 @@ h2 {
 .video {
   width: 400px;
   height: 300px;
-  border-radius: 15px;
+  border-radius: 3px;
 }
 
 ul {
@@ -54,10 +54,8 @@ a:hover {
   list-style-type: none;
 }
 
-.image, .video {
-  width: 410px;
-  border-radius: 15px;
-  object-fit: cover;
+.image, .video, .today {
+  border-radius: 5px 5px 0 0;
 }
 
 .icon {
@@ -65,22 +63,35 @@ a:hover {
 }
 
 .star-toggle {
-  color: #ffee93;
+  color: #FFD166;
 }
 
 .star {
-  opacity: .5;
+  opacity: .4;
 }
 
 .today {
   max-width: 80%;
-  border-radius: 15px;
 }
 
-@media only screen and (max-width: 1000px) {
-  .image, .today {
-    max-width: 100%;
-  }
+.card {
+  box-shadow: 10px 10px rgba(209, 204, 220, .2);
+  border-radius: 5px;
+  background-color: #d1ccdc;
+  color: #1b1725;
+}
+
+.card-container {
+  padding: 2rem;
+}
+
+::-moz-selection {
+  background: #FFD166; 
+  color: #1b1725;
+}
+::selection {
+  background: #FFD166;
+  color: #1b1725;
 }
 
 @media only screen and (max-width: 700px) {
@@ -91,7 +102,7 @@ a:hover {
     top: 0;
     left: -100%;
     transition: 850ms;
-    padding-right: 1.4rem;
+    padding-right: 1.6rem;
     position: fixed;
     z-index: 2;
   }
@@ -110,9 +121,6 @@ a:hover {
   .menu-bars, .menu-exit {
     position: absolute;
     left: 4rem;
-  }
-  .video {
-    max-width: 100%;
   }
 }
 

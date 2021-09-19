@@ -6,7 +6,8 @@ export default function Favorites() {
         <>
             <Navbar />
             <main className="container">
-                <h1>Favorites</h1>
+                <h1>Stars</h1>
+                View your favorite media here!
             </main>
         </>
     )

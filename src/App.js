@@ -10,7 +10,7 @@ function App() {
     <BrowserRouter>
         <Route component={Home} path='/' exact />
         <Route component={Browse} path='/browse' />
-        <Route component={Favorites} path='/favorites' />
+        <Route component={Favorites} path='/stars' />
         <Route component={About} path='/about' />
     </BrowserRouter>
   );

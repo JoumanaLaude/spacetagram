@@ -43,10 +43,11 @@ export default function Star() {
 const StarButton = styled.button`
     font-size: 1rem;
     padding: 1rem;
-    color: #1b1725;
-    background-color: #d1ccdc;
+    color: #d1ccdc;
+    background-color: #1b1725;
     border: none;
     border-radius: 15px;
+    cursor: pointer;
 `;
 
 const Button = styled.span`

@@ -23,13 +23,15 @@ export default function Past() {
     if (!imgData) return <div>Loading...</div>;
 
     return (
-        <>
+        <section>
+            <Box>
             <Link to="/past" onClick={() => window.location.reload()}>
                 <button>Randomize!</button>
             </Link>
-            <Grid>
-                {imgData.map((imgData, index) => (
-                        <Media key={index}>
+
+                <Grid>
+                    {imgData.map((imgData, index) => (
+                        <div className="card" key={index}>
                             {imgData.media_type === 'image' ? (
                                 <ModalImage
                                     small={imgData.url}
@@ -49,13 +51,16 @@ export default function Past() {
                                     className='video'
                                 />
                             )}
-                            <p>{imgData.date}</p>
-                            <Title>{imgData.title}</Title>
-                            <Star />
-                        </Media>
-                ))}
-            </Grid>
-        </>
+                            <div className="card-container">
+                                <CardText>{imgData.date}</CardText>
+                                <Title>{imgData.title}</Title>
+                                <Star />
+                            </div>
+                        </div>
+                    ))}
+                </Grid>
+            </Box>
+        </section>
     )
 }
 
@@ -63,6 +68,7 @@ const Grid = styled.div`
     display: grid;
     grid-row: 2 / auto;
     grid-template-columns: 1fr 1fr;
+    grid-gap: 5rem;
 
     @media only screen and (max-width: 900px) {
         grid-template-columns: 1fr;
@@ -73,19 +79,27 @@ const Grid = styled.div`
     }
 `;
 
-const Media = styled.div`
-    font-size: 1.2rem;
-    padding: 2rem;
-
-    @media only screen and (max-width: 700px) {
-    font-size: 1rem;
+const Box = styled.div`
+    width: 70%;
+    display: inline-block;
+    vertical-align: middle;
+    @media only screen and (max-width: 800px) {
+        width: 100%;
     }
 `;
 
 const Title = styled.h3`
-    padding: 10px;
+    padding: 15px;
 
     @media only screen and (max-width: 700px) {
-        font-size: 1.4rem;
+        font-size: 1rem;
         }
+`;
+
+const CardText = styled.p`
+    line-height: 1.4rem;
+    padding-top: 2rem;
+    @media only screen and (max-width: 800px) {
+        display: none;
+    }
 `;
