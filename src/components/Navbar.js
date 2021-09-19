@@ -18,9 +18,11 @@ export default function Navbar() {
             <nav className={isOpen ? 'nav-menu active' : 'nav-menu'}>
                 <ul className="nav-links">
                     <NavItem>
-                        <Link to='#' className="menu-exit">
-                            <FontAwesomeIcon icon={faTimes} onClick={showMenu} className="fa-2x" />
-                        </Link>
+                        <MenuClose>
+                            <Link to='#'>
+                                <FontAwesomeIcon icon={faTimes} onClick={showMenu} className="menu-exit fa-2x" />
+                            </Link>
+                        </MenuClose>
                     </NavItem>
                     <NavItem><Link to="/"><FontAwesomeIcon icon={faSatellite} /> Today</Link></NavItem>
                     <NavItem><Link to="/browse"><FontAwesomeIcon icon={faMeteor} /> Past</Link></NavItem>
@@ -44,13 +46,16 @@ const Navigation = styled.div`
 const NavItem = styled.li`
     font-size: 1.2rem;
 
-    @media only screen and (max-width: 769px) { 
-        padding: 1rem;
+    @media only screen and (max-width: 700px) { 
+        padding: 1.2rem .2rem;
     }
-    @media only screen and (min-width: 770px) {
-        text-decoration: none;
+    @media only screen and (min-width: 701px) {
         padding: 2rem;
     }
+`;
+
+const MenuClose = styled.div`
+    padding-bottom: 2rem;
 `;
 
 const Title = styled.h2`

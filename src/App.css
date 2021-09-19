@@ -72,6 +72,7 @@ a:hover {
 
 .today {
   max-width: 80%;
+  border-radius: 15px;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -102,10 +103,11 @@ a:hover {
     flex-direction: column;
     padding-left: 1.4rem;
     padding-bottom: 2rem;
+    text-align: left;
   }
-  .menu-bars {
+  .menu-bars, .menu-exit {
     position: absolute;
-    left: 4.2rem;
+    left: 4rem;
   }
   .video {
     max-width: 100%;
@@ -115,10 +117,5 @@ a:hover {
 @media only screen and (min-width: 701px) {
   .menu-bars, .menu-exit {
     display: none;
-  }
-}
-@media (max-width: 400px) {
-  .menu-bars {
-    left: 1rem;
   }
 }
