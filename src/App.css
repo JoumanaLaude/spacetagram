@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Vidaloka&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Vidaloka&family=Comfortaa:wght@300;700&display=swap');
 
 * {
   box-sizing: border-box;
@@ -14,9 +14,13 @@ body {
 }
 
 h1 {
-  font-family: 'Vidaloka', serif;
+  font-family: 'Comfortaa', cursive;
   font-size: 1.6rem;
   font-weight: 400;
+}
+
+h2 {
+  font-family: 'Vidaloka', cursive;
 }
 
 .photo-wrapper {
@@ -28,7 +32,7 @@ h1 {
 .video {
   width: 400px;
   height: 300px;
-  border-radius: 10px 30px;
+  border-radius: 15px;
 }
 
 ul {
@@ -36,6 +40,8 @@ ul {
 }
 
 a, a:active, a:visited {
+  font-family: 'Comfortaa', cursive;
+  font-weight: 700;
   text-decoration: none;
   color: #1b1725;
 }
@@ -50,13 +56,26 @@ a:hover {
   list-style-type: none;
 }
 
-.image {
+.image, .video {
   width: 410px;
-  border-radius: 10px 30px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.icon {
+  margin: 8px 10px 0 10px;
+}
+
+.star {
+  color: grey;
+}
+
+.today {
+  max-width: 80%;
 }
 
 @media only screen and (max-width: 1000px) {
-  .image {
+  .image, .today {
     max-width: 100%;
   }
 }
@@ -96,5 +115,10 @@ a:hover {
 @media only screen and (min-width: 701px) {
   .menu-bars, .menu-exit {
     display: none;
+  }
+}
+@media (max-width: 400px) {
+  .menu-bars {
+    left: 1rem;
   }
 }

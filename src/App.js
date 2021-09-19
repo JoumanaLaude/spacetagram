@@ -1,13 +1,15 @@
 import { BrowserRouter, Route } from 'react-router-dom';
-import Today from './components/Today';
-import Past from './components/Past';
+import Home from './components/Home/Home';
+import Browse from './components/Browse/Browse';
+import Favorites from './components/Favorites/Favorites';
 import './App.css';
 
 function App() {
   return (
     <BrowserRouter>
-        <Route component={Today} path='/' exact />
-        <Route component={Past} path='/past' />
+        <Route component={Home} path='/' exact />
+        <Route component={Browse} path='/browse' />
+        <Route component={Favorites} path='/favorites' />
     </BrowserRouter>
   );
 }

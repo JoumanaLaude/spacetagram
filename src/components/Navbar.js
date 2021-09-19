@@ -23,8 +23,8 @@ export default function Navbar() {
                         </Link>
                     </NavItem>
                     <NavItem><Link to="/"><FontAwesomeIcon icon={faSatellite} /> Today</Link></NavItem>
-                    <NavItem><Link to="/past"><FontAwesomeIcon icon={faMeteor} /> Past</Link></NavItem>
-                    <NavItem><Link to="/"><FontAwesomeIcon icon={faStar} /> Saved</Link></NavItem>
+                    <NavItem><Link to="/browse"><FontAwesomeIcon icon={faMeteor} /> Past</Link></NavItem>
+                    <NavItem><Link to="/favorites"><FontAwesomeIcon icon={faStar} /> Favorites</Link></NavItem>
                     <NavItem><Link to="/"><FontAwesomeIcon icon={faRocket} /> About</Link></NavItem>
                 </ul>
             </nav>
@@ -42,11 +42,12 @@ const Navigation = styled.div`
 `;
 
 const NavItem = styled.li`
-@media only screen and (max-width: 700px) { 
-    padding: 1.2rem;
-}
-    @media only screen and (min-width: 701px) {
-        font-size: 1.4rem;
+    font-size: 1.2rem;
+
+    @media only screen and (max-width: 769px) { 
+        padding: 1rem;
+    }
+    @media only screen and (min-width: 770px) {
         text-decoration: none;
         padding: 2rem;
     }
@@ -58,4 +59,8 @@ const Title = styled.h2`
     justify-content: center;
     align-items: center;
     padding-left: 20px;
+    
+    @media (max-width: 360px) {
+        font-size: 1.2rem;
+        }
 `;
