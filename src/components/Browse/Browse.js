@@ -6,14 +6,14 @@ export default function Browse() {
     return (
         <>
             <Navbar />
-            <main className="container">
+            <section className="container">
                 <h1>Browse</h1>
-                <p>Search through time: </p>
+                <p>Click the button to refresh the images!</p>
+                {/* <p>Search through time: </p>
                 <input type="text"></input>
-                {/* semantic input fields */}
-                <button>Search</button><br />
+                <button>Search</button><br /> */}
+                </section>
                 <Past />
-            </main>
         </>
     )
 }

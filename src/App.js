@@ -7,12 +7,12 @@ import './App.css';
 
 function App() {
   return (
-    <BrowserRouter>
+      <BrowserRouter>
         <Route component={Home} path='/' exact />
         <Route component={Browse} path='/browse' />
         <Route component={Favorites} path='/stars' />
         <Route component={About} path='/about' />
-    </BrowserRouter>
+      </BrowserRouter>
   );
 }
 

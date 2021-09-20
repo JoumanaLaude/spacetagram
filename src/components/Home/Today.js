@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import ModalImage from "react-modal-image";
 import Star from '../Favorites/Star';
+import Loading from '../Loading';
 
 const apiKey = process.env.REACT_APP_APOD_KEY;
 
 export default function Today() {
-
     const [imgData, setImgData] = useState(null);
 
     useEffect(() => {
@@ -20,13 +20,18 @@ export default function Today() {
         }
     }, []);
 
-    if (!imgData) return <div>Loading...<br /><br />Did you know?<br />"At the Smithsonian Air & Space Museum you can touch a real moon rock!"</div>;
+    if (!imgData) return (
+        <Loading />
+    );
+
+    // const date = new Date();
+    // console.log(new Intl.DateTimeFormat('en-GB', { dateStyle: 'full' }).format(date));
 
     return (
         <section>
             <Box>
-                <h1>{imgData.date}</h1>
-                <h1>Today from NASA: {imgData.title}</h1>
+                <Title>Today from NASA: <br />{imgData.title}</Title>
+                <p>{imgData.date}</p>
                 <br />
                 <div className="card">
                     {imgData.media_type === 'image' ? (
@@ -54,7 +59,6 @@ export default function Today() {
                         <CardText>Credit: {imgData.copyright}</CardText>
                     </div>
                 </div>
-
             </Box>
         </section>
     )
@@ -72,8 +76,15 @@ const Box = styled.div`
     width: 50%;
     display: inline-block;
     vertical-align: middle;
-    @media only screen and (max-width: 800px) {
-        width: 100%;
-    }
+    padding-bottom: 5rem;
+    background: transparent;
 `;
 
+const Title = styled.h3`
+    font-size: 2rem;
+    padding: 15px;
+
+    @media only screen and (max-width: 700px) {
+        font-size: 1rem;
+        }
+`;

@@ -10,7 +10,7 @@ export default function Navbar() {
     const showMenu = () => setIsOpen(!isOpen);
 
     return (
-        <header>
+        <nav>
             <Navigation>
                 <Link to='#' className="menu-bars">
                     <FontAwesomeIcon icon={faBars} className="fa-2x" onClick={showMenu} />
@@ -32,7 +32,7 @@ export default function Navbar() {
                     </ul>
                 </nav>
             </Navigation>
-        </header>
+        </nav>
     )
 }
 

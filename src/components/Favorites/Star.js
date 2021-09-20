@@ -16,7 +16,7 @@ export default function Star() {
     return (
         <>
             <StarButton type="button" onClick={() => handleToggle()}>
-                <Button>Add to stars</Button>
+                <Button type="button" className="button-font">Add to stars</Button>
                 {
                     starMedia ? (
                         <FontAwesomeIcon icon={faStar}
@@ -52,4 +52,7 @@ const StarButton = styled.button`
 
 const Button = styled.span`
     padding: 1rem;
+    @media only screen and (max-width: 700px) {
+        display: none;
+    }
 `;

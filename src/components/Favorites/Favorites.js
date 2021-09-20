@@ -5,10 +5,10 @@ export default function Favorites() {
     return (
         <>
             <Navbar />
-            <main className="container">
+            <section className="container bg">
                 <h1>Stars</h1>
                 View your favorite media here!
-            </main>
+            </section>
         </>
     )
 }

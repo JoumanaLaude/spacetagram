@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import ModalImage from "react-modal-image";
 import Star from '../Favorites/Star';
 import { Link } from "react-router-dom";
+import Loading from '../Loading';
 
 const apiKey = process.env.REACT_APP_APOD_KEY;
 
@@ -17,19 +18,22 @@ export default function Past() {
             .then((response) => response.json())
             .then((data) => setImgData(data))
             .catch((error) => console.log(error.message));
+
         return () => abortController.abort();
+
     }, []);
 
-    if (!imgData) return <div>Loading...</div>;
+    if (!imgData) return <Loading />;
 
     return (
         <section>
             <Box>
-            <Link to="/past" onClick={() => window.location.reload()}>
-                <button>Randomize!</button>
-            </Link>
-
-                <Grid>
+                <ButtonWrapper>
+                    <Link to="/past" onClick={() => window.location.reload(false)}>
+                        <Randomize type="button" className="button-font">Randomize!</Randomize>
+                    </Link>
+                </ButtonWrapper>
+                <Grid className="container">
                     {imgData.map((imgData, index) => (
                         <div className="card" key={index}>
                             {imgData.media_type === 'image' ? (
@@ -83,6 +87,8 @@ const Box = styled.div`
     width: 70%;
     display: inline-block;
     vertical-align: middle;
+    padding-bottom: 3rem;
+    
     @media only screen and (max-width: 800px) {
         width: 100%;
     }
@@ -98,8 +104,21 @@ const Title = styled.h3`
 
 const CardText = styled.p`
     line-height: 1.4rem;
-    padding-top: 2rem;
     @media only screen and (max-width: 800px) {
         display: none;
     }
+`;
+
+const Randomize = styled.button`
+    font-size: 1rem;
+    padding: 1rem;
+    background-color: #d1ccdc;
+    color: #1b1725;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+`;
+
+const ButtonWrapper = styled.div`
+    padding-bottom: 5rem;
 `;

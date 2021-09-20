@@ -9,18 +9,31 @@
 body {
   text-align: center;
   font-family: 'Lato', sans-serif;
+  font-size: 1.2rem;
   background-color: #1b1725;
   color: #d1ccdc;
+  background: linear-gradient(-45deg, #d1ccdc, #1b1725);
+}
+
+.bg {
+  background: linear-gradient(-45deg, #d1ccdc, #1b1725);
+  height: calc(100vh - 80px);
 }
 
 h1 {
   font-family: 'Vidaloka', cursive;
+  font-size: 3rem;
+  padding: 3rem 0;
 }
 
 h2 {
   font-family: 'Comfortaa', cursive;
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-weight: 400;
+}
+
+.button-font {
+  font-family: 'Lato', sans-serif;
 }
 
 .container {
@@ -74,6 +87,10 @@ a:hover {
   max-width: 80%;
 }
 
+.image, .video {
+  max-width: 100%;
+}
+
 .card {
   box-shadow: 10px 10px rgba(209, 204, 220, .2);
   border-radius: 5px;
@@ -122,9 +139,12 @@ a:hover {
     position: absolute;
     left: 4rem;
   }
+  .today {
+    max-width: 100%;
+  }
 }
 
-@media only screen and (min-width: 701px) {
+@media only screen and (min-width: 601px) {
   .menu-bars, .menu-exit {
     display: none;
   }
