@@ -6,7 +6,7 @@ import Loading from '../Loading';
 
 const apiKey = process.env.REACT_APP_APOD_KEY;
 
-export default function Past() {
+export default function Media() {
     const [imgData, setImgData] = useState(null);
 
     useEffect(() => {

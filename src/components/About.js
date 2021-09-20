@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar';
-import gif from './space-anime.gif';
+import gif from './stars-gif.gif';
 
 export default function About() {
     return (
