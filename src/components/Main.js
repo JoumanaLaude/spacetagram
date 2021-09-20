@@ -15,9 +15,9 @@ export default function Main() {
         <div>
             <Switch>
                 <Route component={HomePage} path='/' exact />
-                <Route component={Browse} path='/browse' />
-                <Route component={Favorites} path='/stars' />
-                <Route component={About} path='/about' />
+                <Route component={Browse} exact path='/browse' />
+                <Route component={Favorites} exact path='/stars' />
+                <Route component={About} exact path='/about' />
             </Switch>
         </div>
     );
