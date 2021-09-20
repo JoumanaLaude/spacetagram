@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import ModalImage from "react-modal-image";
 import Star from '../Favorites/Star';
-import { Link } from "react-router-dom";
 import Loading from '../Loading';
 
 const apiKey = process.env.REACT_APP_APOD_KEY;
@@ -28,12 +27,8 @@ export default function Past() {
     return (
         <section>
             <Box>
-                <ButtonWrapper>
-                    <Link to="/past" onClick={() => window.location.reload(false)}>
-                        <Randomize type="button" className="button-font">Randomize!</Randomize>
-                    </Link>
-                </ButtonWrapper>
-                <Grid className="container">
+                <button onClick={() => window.location.reload(false)} type="button">Randomize!</button>
+                <Grid>
                     {imgData.map((imgData, index) => (
                         <div className="card" key={index}>
                             {imgData.media_type === 'image' ? (
@@ -73,7 +68,8 @@ const Grid = styled.div`
     grid-row: 2 / auto;
     grid-template-columns: 1fr 1fr;
     grid-gap: 5rem;
-
+    padding: 4rem;
+    
     @media only screen and (max-width: 900px) {
         grid-template-columns: 1fr;
     }
@@ -84,7 +80,7 @@ const Grid = styled.div`
 `;
 
 const Box = styled.div`
-    width: 70%;
+    width: 80%;
     display: inline-block;
     vertical-align: middle;
     padding-bottom: 3rem;
@@ -107,18 +103,4 @@ const CardText = styled.p`
     @media only screen and (max-width: 800px) {
         display: none;
     }
-`;
-
-const Randomize = styled.button`
-    font-size: 1rem;
-    padding: 1rem;
-    background-color: #d1ccdc;
-    color: #1b1725;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-`;
-
-const ButtonWrapper = styled.div`
-    padding-bottom: 5rem;
 `;

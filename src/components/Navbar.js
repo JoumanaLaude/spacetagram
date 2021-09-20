@@ -26,7 +26,7 @@ export default function Navbar() {
                             </MenuClose>
                         </NavItem>
                         <NavItem><Link to="/"><FontAwesomeIcon icon={faSatellite} className="fa-fw" /> Today</Link></NavItem>
-                        <NavItem><Link to="/browse"><FontAwesomeIcon icon={faMeteor} className="fa-fw" /> Past</Link></NavItem>
+                        <NavItem><Link to="/browse"><FontAwesomeIcon icon={faMeteor} className="fa-fw" /> Browse</Link></NavItem>
                         <NavItem><Link to="/stars"><FontAwesomeIcon icon={faStar} className="fa-fw" /> Stars</Link></NavItem>
                         <NavItem><Link to="/about"><FontAwesomeIcon icon={faRocket} className="fa-fw" /> About</Link></NavItem>
                     </ul>
@@ -42,7 +42,7 @@ const Navigation = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #d1ccdc;
+    background: #DDDAFF;
 `;
 
 const NavItem = styled.li`

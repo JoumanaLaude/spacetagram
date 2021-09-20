@@ -4,7 +4,7 @@ import './loading.css';
 export default function Loading() {
     return (
         <>
-            <main className="container bg">
+            <main className="container">
                     <div class="socket">
                         <div class="gel center-gel">
                             <div class="hex-brick h1"></div>

@@ -11,19 +11,20 @@ body {
   font-family: 'Lato', sans-serif;
   font-size: 1.2rem;
   background-color: #1b1725;
-  color: #d1ccdc;
-  background: linear-gradient(-45deg, #d1ccdc, #1b1725);
+  color: #1b1725;
+  /* background-image: radial-gradient( circle farthest-corner at 0.8% 3.1%,  rgba(255,188,224,1) 0%, rgba(170,165,255,1) 46%, rgba(165,255,205,1) 100.2% ); */
+  background-image: linear-gradient( 109.6deg,  rgba(177,173,219,1) 11.2%, rgba(245,226,226,1) 91.1% );
 }
 
 .bg {
-  background: linear-gradient(-45deg, #d1ccdc, #1b1725);
+  background-image: linear-gradient( 109.6deg,  rgba(177,173,219,1) 11.2%, rgba(245,226,226,1) 91.1% );
   height: calc(100vh - 80px);
 }
 
 h1 {
   font-family: 'Vidaloka', cursive;
   font-size: 3rem;
-  padding: 3rem 0;
+  padding-bottom: 3rem 0;
 }
 
 h2 {
@@ -32,12 +33,8 @@ h2 {
   font-weight: 400;
 }
 
-.button-font {
-  font-family: 'Lato', sans-serif;
-}
-
 .container {
-  padding: 4rem 6rem;
+  padding: 4rem 3rem 2rem 3rem;
 }
 
 .video {
@@ -67,7 +64,7 @@ a:hover {
   list-style-type: none;
 }
 
-.image, .video, .today {
+.image, .video, .today, .gif {
   border-radius: 5px 5px 0 0;
 }
 
@@ -75,45 +72,56 @@ a:hover {
   margin: 8px 10px 0 10px;
 }
 
-.star-toggle {
-  color: #FFD166;
-}
-
-.star {
-  opacity: .4;
-}
-
-.today {
-  max-width: 80%;
-}
-
-.image, .video {
+.image, .video, .gif {
   max-width: 100%;
+  /* height: 200px; */
 }
 
 .card {
   box-shadow: 10px 10px rgba(209, 204, 220, .2);
   border-radius: 5px;
-  background-color: #d1ccdc;
+  background-color: #DDDAFF;
   color: #1b1725;
 }
 
-.card-container {
+.card-container, .gif {
   padding: 2rem;
 }
 
 ::-moz-selection {
-  background: #FFD166; 
+  background: #DDDAFF; 
   color: #1b1725;
 }
 ::selection {
-  background: #FFD166;
+  background: #DDDAFF;
   color: #1b1725;
 }
 
+.star-toggle {
+  color: #f5e2e2;
+}
+
+.star {
+  opacity: .3;
+}
+
+button {
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 1px;
+  padding: .8rem;
+  text-align: center;
+  border-radius: 5px;
+  border: none;
+  text-shadow: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: #DDDAFF;
+  background-color: #1b1725;
+ }
+
 @media only screen and (max-width: 700px) {
   .nav-menu {
-    background: #d1ccdc;
+    background: #DDDAFF;
     border-right: 1px solid #1b1725;
     border-bottom: 1px solid #1b1725;
     top: 0;

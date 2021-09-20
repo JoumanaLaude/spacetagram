@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../Navbar';
 import Past from './Past';
+import Top from './Top';
 
 export default function Browse() {
     return (
@@ -8,12 +9,10 @@ export default function Browse() {
             <Navbar />
             <section className="container">
                 <h1>Browse</h1>
-                <p>Click the button to refresh the images!</p>
-                {/* <p>Search through time: </p>
-                <input type="text"></input>
-                <button>Search</button><br /> */}
-                </section>
-                <Past />
+                <p>Click the button to search through time.</p>
+            </section>
+            <Past />
+            <Top />
         </>
     )
 }

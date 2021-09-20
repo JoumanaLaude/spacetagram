@@ -20,19 +20,13 @@ export default function Today() {
         }
     }, []);
 
-    if (!imgData) return (
-        <Loading />
-    );
-
-    // const date = new Date();
-    // console.log(new Intl.DateTimeFormat('en-GB', { dateStyle: 'full' }).format(date));
+    if (!imgData) return <Loading />;
 
     return (
         <section>
-            <Box>
-                <Title>Today from NASA: <br />{imgData.title}</Title>
-                <p>{imgData.date}</p>
-                <br />
+            {/* <Box> */}
+                <Title>Today ({imgData.date}): {imgData.title}</Title>
+                <Box>
                 <div className="card">
                     {imgData.media_type === 'image' ? (
                         <ModalImage
@@ -77,12 +71,11 @@ const Box = styled.div`
     display: inline-block;
     vertical-align: middle;
     padding-bottom: 5rem;
-    background: transparent;
 `;
 
 const Title = styled.h3`
-    font-size: 2rem;
-    padding: 15px;
+    font-size: 1.4rem;
+    padding-bottom: 2rem;
 
     @media only screen and (max-width: 700px) {
         font-size: 1rem;
