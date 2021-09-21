@@ -10,7 +10,7 @@ export default function Home() {
                 <h1>Spacetagram</h1>
                 <p>A space to view our universe.</p>
             </section>
-                <Today />
+            <Today />
         </>
     )
 }

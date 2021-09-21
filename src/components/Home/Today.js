@@ -24,7 +24,6 @@ export default function Today() {
 
     return (
         <section>
-            {/* <Box> */}
                 <Title>Today ({imgData.date}): {imgData.title}</Title>
                 <Box>
                 <div className="card">

@@ -14,7 +14,7 @@ export default function Main() {
     return (
         <div>
             <Switch>
-                <Route component={HomePage} path='/' exact />
+                <Route component={HomePage} exact path='/' />
                 <Route component={Browse} exact path='/browse' />
                 <Route component={Favorites} exact path='/stars' />
                 <Route component={About} exact path='/about' />

@@ -91,8 +91,7 @@ const Box = styled.div`
 `;
 
 const Title = styled.h3`
-    padding: 15px;
-
+    padding: 1rem 0;
     @media only screen and (max-width: 700px) {
         font-size: 1rem;
         }
@@ -100,7 +99,7 @@ const Title = styled.h3`
 
 const CardText = styled.p`
     line-height: 1.4rem;
-    @media only screen and (max-width: 800px) {
-        display: none;
-    }
+    @media only screen and (max-width: 700px) {
+        font-size: 1rem;
+        }
 `;
