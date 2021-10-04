@@ -7,7 +7,8 @@ import Loading from '../Loading';
 const apiKey = process.env.REACT_APP_APOD_KEY;
 
 export default function Media() {
-    const [imgData, setImgData] = useState(null);
+    
+    const [mediaData, setmediaData] = useState(null);
 
     useEffect(() => {
         const abortController = new AbortController();
@@ -15,44 +16,44 @@ export default function Media() {
 
         fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&count=18`, opts)
             .then((response) => response.json())
-            .then((data) => setImgData(data))
+            .then((data) => setmediaData(data))
             .catch((error) => console.log(error.message));
 
         return () => abortController.abort();
 
     }, []);
 
-    if (!imgData) return <Loading />;
+    if (!mediaData) return <Loading />;
 
     return (
         <section>
             <Box>
                 <button onClick={() => window.location.reload(false)} type="button">Randomize!</button>
                 <Grid>
-                    {imgData.map((imgData, index) => (
+                    {mediaData.map((mediaData, index) => (
                         <div className="card" key={index}>
-                            {imgData.media_type === 'image' ? (
+                            {mediaData.media_type === 'image' ? (
                                 <ModalImage
-                                    small={imgData.url}
-                                    large={imgData.hdurl}
+                                    small={mediaData.url}
+                                    large={mediaData.hdurl}
                                     hideDownload={true}
                                     showRotate={true}
-                                    alt={imgData.title}
+                                    alt={mediaData.title}
                                     className='image'
                                 />
                             ) : (
                                 <iframe
                                     title='space-video'
-                                    src={imgData.url}
+                                    src={mediaData.url}
                                     frameBorder='0'
-                                    gesture='media'
+                                    // allow='autoplay'
                                     allow='encrypted-media'
                                     className='video'
                                 />
                             )}
                             <div className="card-container">
-                                <CardText>{imgData.date}</CardText>
-                                <Title>{imgData.title}</Title>
+                                <CardText>{mediaData.date}</CardText>
+                                <Title>{mediaData.title}</Title>
                                 <Star />
                             </div>
                         </div>
