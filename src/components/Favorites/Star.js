@@ -2,8 +2,8 @@ import React, { useState
     // , useContext 
 } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from '@fortawesome/free-solid-svg-icons';
-// import { GlobalContext } from '../../context/GlobalState';
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+// import { GlobalContext } from "../../context/GlobalState";
 
 export default function Star() {
     // const { addMediaToStars } = useContext(GlobalContext);
@@ -24,7 +24,7 @@ export default function Star() {
                     handleToggle();
                     // addMediaToStars();
                 }}>
-                Add Star{' '}
+                Add Star{" "}
                 {
                     starMedia ? (
                         <FontAwesomeIcon icon={faStar} className="fa-1x fa-fw star-toggle" />

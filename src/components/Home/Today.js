@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
 import ModalImage from "react-modal-image";
-import Star from '../Favorites/Star';
-import Loading from '../Loading';
+import Star from "../Favorites/Star";
+import Loading from "../Loading";
 
 const apiKey = process.env.REACT_APP_APOD_KEY;
 
@@ -26,22 +26,22 @@ export default function Today() {
             <Title>Today ({mediaData.date}): {mediaData.title}</Title>
             <Box>
                 <div className="card">
-                    {mediaData.media_type === 'image' ? (
+                    {mediaData.media_type === "image" ? (
                         <ModalImage
                             small={mediaData.url}
                             large={mediaData.hdurl}
                             hideDownload={true}
                             showRotate={true}
                             alt={mediaData.title}
-                            className='today'
+                            className="today"
                         />
                     ) : (
                         <iframe
-                            title='space-video'
+                            title="space-video"
                             src={mediaData.url}
-                            frameBorder='0'
-                            gesture='media'
-                            allow='encrypted-media'
+                            frameBorder="0"
+                            gesture="media"
+                            allow="encrypted-media"
                             allowFullScreen
                         />
                     )}

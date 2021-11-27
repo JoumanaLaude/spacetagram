@@ -3,11 +3,12 @@ import styled from 'styled-components';
 import ModalImage from "react-modal-image";
 import Star from '../Favorites/Star';
 import Loading from '../Loading';
+import { LazyLoadComponent } from 'react-lazy-load-image-component';
 
 const apiKey = process.env.REACT_APP_APOD_KEY;
 
 export default function Media() {
-    
+
     const [mediaData, setMediaData] = useState(null);
 
     useEffect(() => {
@@ -32,22 +33,25 @@ export default function Media() {
                     {mediaData.map((mediaData, index) => (
                         <div className="card" key={index}>
                             {mediaData.media_type === 'image' ? (
-                                <ModalImage
-                                    small={mediaData.url}
-                                    large={mediaData.hdurl}
-                                    hideDownload={true}
-                                    showRotate={true}
-                                    alt={mediaData.title}
-                                    className='image'
-                                />
+                                <LazyLoadComponent>
+                                    <ModalImage
+                                        small={mediaData.url}
+                                        large={mediaData.hdurl}
+                                        hideDownload={true}
+                                        showRotate={true}
+                                        alt={mediaData.title}
+                                        className='image'
+                                        // loading='lazy'
+                                    />
+                                </LazyLoadComponent>
                             ) : (
                                 <iframe
                                     title='space-video'
                                     src={mediaData.url}
                                     frameBorder='0'
-                                    // allow='autoplay'
                                     allow='encrypted-media'
                                     className='video'
+                                    loading='lazy'
                                 />
                             )}
                             <div className="card-container">

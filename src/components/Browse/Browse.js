@@ -1,7 +1,8 @@
-import React from 'react';
-import Navbar from '../Navbar';
-import Media from './Media';
-import Top from './Top';
+import React from "react";
+import Navbar from "../Navbar";
+import Media from "./Media";
+import Top from "./Top";
+
 
 export default function Browse() {
     return (

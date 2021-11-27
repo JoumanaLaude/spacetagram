@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
-import styled from 'styled-components';
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import styled from "styled-components";
 
 const ScrollButton = () => {
 
@@ -20,12 +20,12 @@ const ScrollButton = () => {
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
-            behavior: 'smooth'
+            behavior: "smooth"
         });
     };
 
     useEffect(() => {
-        window.addEventListener('scroll', toggleVisible);
+        window.addEventListener("scroll", toggleVisible);
     }, []);
 
     return (
@@ -33,7 +33,7 @@ const ScrollButton = () => {
             <FontAwesomeIcon
                 icon={faArrowUp}
                 onClick={scrollToTop}
-                style={{ display: visible ? 'inline' : 'none' }} />
+                style={{ display: visible ? "inline" : "none" }} />
         </Button>
     );
 }

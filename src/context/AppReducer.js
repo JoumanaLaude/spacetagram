@@ -14,7 +14,7 @@ const store = (state, action) => {
 
 export default store;
 
-// import * as ActionTypes from './ActionTypes';
+// import * as ActionTypes from "./ActionTypes";
 
 // export const favorites = (state = [], action) => {
 //     switch (action.type) {

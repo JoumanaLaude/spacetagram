@@ -1,6 +1,6 @@
-import React from 'react';
-import Navbar from '../Navbar';
-import Today from './Today';
+import React from "react";
+import Navbar from "../Navbar";
+import Today from "./Today";
 
 export default function Home() {
     return (

@@ -1,10 +1,10 @@
 import React, { createContext, useReducer, useEffect } from "react";
-import AppReducer from './AppReducer';
+import AppReducer from "./AppReducer";
 
 const initialState = {
     // stars: [],
-    stars: localStorage.getItem('stars') 
-    ? JSON.parse(localStorage.getItem('stars'))
+    stars: localStorage.getItem("stars") 
+    ? JSON.parse(localStorage.getItem("stars"))
     : [],
 };
 
@@ -15,7 +15,7 @@ export const GlobalProvider = (props) => {
     const [state, dispatch] = useReducer(AppReducer, initialState);
 
     useEffect(() => {
-        localStorage.setItem('stars', JSON.stringify(state.stars))
+        localStorage.setItem("stars", JSON.stringify(state.stars))
     }, [state]);
 
     const addMediaToStars = (stars) => {

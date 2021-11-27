@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes, faSatellite, faMeteor, faRocket, faStar } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faTimes, faSatellite, faMeteor, faRocket, faStar } from "@fortawesome/free-solid-svg-icons";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -12,15 +12,15 @@ export default function Navbar() {
     return (
         <nav>
             <Navigation>
-                <Link to='#' className="menu-bars">
+                <Link to="#" className="menu-bars">
                     <FontAwesomeIcon icon={faBars} className="fa-2x" onClick={showMenu} />
                 </Link>
                 <Link to="/"><Title>Spacetagram</Title></Link>
-                <nav className={isOpen ? 'nav-menu active' : 'nav-menu'}>
+                <nav className={isOpen ? "nav-menu active" : "nav-menu"}>
                     <ul className="nav-links">
                         <NavItem>
                             <MenuClose>
-                                <Link to='#'>
+                                <Link to="#">
                                     <FontAwesomeIcon icon={faTimes} onClick={showMenu} className="menu-exit fa-2x" />
                                 </Link>
                             </MenuClose>
