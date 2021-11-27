@@ -1,12 +1,15 @@
-import React, { useState, useContext } from "react";
+import React, { useState
+    // , useContext 
+} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from '@fortawesome/free-solid-svg-icons';
-import { GlobalContext } from '../../context/GlobalState';
+// import { GlobalContext } from '../../context/GlobalState';
 
 export default function Star() {
-    const { addMediaToStars } = useContext(GlobalContext);
+    // const { addMediaToStars } = useContext(GlobalContext);
 
     const [starMedia, setStarMedia] = useState(false);
+    
     const handleToggle = () => {
         setStarMedia((star) => {
             return !star;
@@ -19,7 +22,7 @@ export default function Star() {
                 type="button"
                 onClick={() => {
                     handleToggle();
-                    addMediaToStars();
+                    // addMediaToStars();
                 }}>
                 Add Star{' '}
                 {

@@ -54,6 +54,9 @@ const NavItem = styled.li`
     @media only screen and (min-width: 701px) {
         padding: 2rem;
     }
+    @media only screen and (min-width: 701px) and (max-width: 770px) {
+        font-size: 1rem;
+    }
 `;
 
 const MenuClose = styled.div`

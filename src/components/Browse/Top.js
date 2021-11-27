@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
@@ -24,7 +24,9 @@ const ScrollButton = () => {
         });
     };
 
-    window.addEventListener('scroll', toggleVisible);
+    useEffect(() => {
+        window.addEventListener('scroll', toggleVisible);
+    }, []);
 
     return (
         <Button>
@@ -38,12 +40,12 @@ const ScrollButton = () => {
 
 export const Button = styled.div`
     vertical-align: middle;
-   padding-bottom: 5rem;
-   height: 20px;
-   font-size: 3rem;
-   z-index: 1;
-   cursor: pointer;
-   color: #1b1725;
+    padding-bottom: 5rem;
+    height: 20px;
+    font-size: 3rem;
+    z-index: 1;
+    cursor: pointer;
+    color: #1b1725;
 `
 
 export default ScrollButton;

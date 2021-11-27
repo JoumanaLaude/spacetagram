@@ -13,3 +13,21 @@ const store = (state, action) => {
 };
 
 export default store;
+
+// import * as ActionTypes from './ActionTypes';
+
+// export const favorites = (state = [], action) => {
+//     switch (action.type) {
+//         case ActionTypes.ADD_MEDIA_TO_STARS:
+//             if (state.includes(action.payload)) {
+//                 return state;
+//             }
+//             return state.concat(action.payload);
+
+//         case ActionTypes.REMOVE_MEDIA_FROM_STARS:
+//             return state.filter(favorite => favorite !== action.payload);
+
+//         default:
+//             return state;
+//     }
+// };

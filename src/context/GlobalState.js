@@ -1,7 +1,6 @@
 import React, { createContext, useReducer, useEffect } from "react";
 import AppReducer from './AppReducer';
 
-// initial state of store
 const initialState = {
     // stars: [],
     stars: localStorage.getItem('stars') 

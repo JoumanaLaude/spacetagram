@@ -7,39 +7,38 @@ import Loading from '../Loading';
 const apiKey = process.env.REACT_APP_APOD_KEY;
 
 export default function Today() {
-    const [imgData, setImgData] = useState(null);
+    const [mediaData, setMediaData] = useState(null);
 
     useEffect(() => {
-        fetchImg();
-
-        async function fetchImg() {
+        fetchMedia();
+        async function fetchMedia() {
             const res = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}`);
             const data = await res.json();
-            setImgData(data);
+            setMediaData(data);
             console.log(data);
         }
     }, []);
 
-    if (!imgData) return <Loading />;
+    if (!mediaData) return <Loading />;
 
     return (
         <section>
-                <Title>Today ({imgData.date}): {imgData.title}</Title>
-                <Box>
+            <Title>Today ({mediaData.date}): {mediaData.title}</Title>
+            <Box>
                 <div className="card">
-                    {imgData.media_type === 'image' ? (
+                    {mediaData.media_type === 'image' ? (
                         <ModalImage
-                            small={imgData.url}
-                            large={imgData.hdurl}
+                            small={mediaData.url}
+                            large={mediaData.hdurl}
                             hideDownload={true}
                             showRotate={true}
-                            alt={imgData.title}
+                            alt={mediaData.title}
                             className='today'
                         />
                     ) : (
                         <iframe
                             title='space-video'
-                            src={imgData.url}
+                            src={mediaData.url}
                             frameBorder='0'
                             gesture='media'
                             allow='encrypted-media'
@@ -48,8 +47,8 @@ export default function Today() {
                     )}
                     <div className="card-container">
                         <Star />
-                        <CardText>{imgData.explanation}</CardText>
-                        <CardText>Credit: {imgData.copyright}</CardText>
+                        <CardText>{mediaData.explanation}</CardText>
+                        <CardText>Credit: {mediaData.copyright}</CardText>
                     </div>
                 </div>
             </Box>
@@ -60,6 +59,7 @@ export default function Today() {
 const CardText = styled.p`
     line-height: 1.4rem;
     padding-top: 2rem;
+    text-align: justify;
     @media only screen and (max-width: 800px) {
         display: none;
     }

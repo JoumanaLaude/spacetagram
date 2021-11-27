@@ -12,7 +12,6 @@ body {
   font-size: 1.2rem;
   background-color: #1b1725;
   color: #1b1725;
-  /* background-image: radial-gradient( circle farthest-corner at 0.8% 3.1%,  rgba(255,188,224,1) 0%, rgba(170,165,255,1) 46%, rgba(165,255,205,1) 100.2% ); */
   background-image: linear-gradient( 109.6deg,  rgba(177,173,219,1) 11.2%, rgba(245,226,226,1) 91.1% );
 }
 
@@ -136,7 +135,6 @@ button {
     transition: 500ms;
   }
   .nav-links {
-    font-size: 1.4rem;
     display: flex;
     flex-direction: column;
     padding-left: 1.4rem;
@@ -152,7 +150,7 @@ button {
   }
 }
 
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 701px) {
   .menu-bars, .menu-exit {
     display: none;
   }

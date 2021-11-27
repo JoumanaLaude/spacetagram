@@ -8,7 +8,7 @@ const apiKey = process.env.REACT_APP_APOD_KEY;
 
 export default function Media() {
     
-    const [mediaData, setmediaData] = useState(null);
+    const [mediaData, setMediaData] = useState(null);
 
     useEffect(() => {
         const abortController = new AbortController();
@@ -16,9 +16,8 @@ export default function Media() {
 
         fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&count=18`, opts)
             .then((response) => response.json())
-            .then((data) => setmediaData(data))
+            .then((data) => setMediaData(data))
             .catch((error) => console.log(error.message));
-
         return () => abortController.abort();
 
     }, []);
