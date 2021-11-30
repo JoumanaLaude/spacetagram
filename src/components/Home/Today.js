@@ -43,12 +43,14 @@ export default function Today() {
                             gesture="media"
                             allow="encrypted-media"
                             allowFullScreen
+                            className="video"
+                            loading="lazy"
                         />
                     )}
                     <div className="card-container">
                         <Star />
                         <CardText>{mediaData.explanation}</CardText>
-                        <CardText>Credit: {mediaData.copyright}</CardText>
+                        <CardText>{mediaData.copyright}</CardText>
                     </div>
                 </div>
             </Box>

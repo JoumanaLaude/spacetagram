@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
 import ModalImage from "react-modal-image";
-import Star from '../Favorites/Star';
-import Loading from '../Loading';
-import { LazyLoadComponent } from 'react-lazy-load-image-component';
+import Star from "../Favorites/Star";
+import Loading from "../Loading";
 
 const apiKey = process.env.REACT_APP_APOD_KEY;
 
@@ -30,28 +29,26 @@ export default function Media() {
             <Box>
                 <button onClick={() => window.location.reload(false)} type="button">Randomize!</button>
                 <Grid>
-                    {mediaData.map((mediaData, index) => (
-                        <div className="card" key={index}>
-                            {mediaData.media_type === 'image' ? (
-                                <LazyLoadComponent>
+                    {mediaData.map((mediaData, star) => (
+                        <div className="card" key={star}>
+                            {mediaData.media_type === "image" ? (
                                     <ModalImage
                                         small={mediaData.url}
                                         large={mediaData.hdurl}
                                         hideDownload={true}
                                         showRotate={true}
                                         alt={mediaData.title}
-                                        className='image'
-                                        // loading='lazy'
+                                        className="image"
+                                        loading="lazy"
                                     />
-                                </LazyLoadComponent>
                             ) : (
                                 <iframe
-                                    title='space-video'
+                                    title="space-video"
                                     src={mediaData.url}
-                                    frameBorder='0'
-                                    allow='encrypted-media'
-                                    className='video'
-                                    loading='lazy'
+                                    frameBorder="0"
+                                    allow="encrypted-media"
+                                    className="video"
+                                    loading="lazy"
                                 />
                             )}
                             <div className="card-container">

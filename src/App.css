@@ -37,7 +37,7 @@ h2 {
 }
 
 .video {
-  width: 400px;
+  width: 100%;
   height: 300px;
   border-radius: 3px;
 }
@@ -158,5 +158,8 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .video {
+    height: 500px;
   }
 }
