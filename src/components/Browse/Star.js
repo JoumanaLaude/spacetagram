@@ -4,7 +4,7 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 export default function Star() {
     const [starMedia, setStarMedia] = useState(false);
-    
+
     const handleToggle = () => {
         setStarMedia((star) => {
             return !star;

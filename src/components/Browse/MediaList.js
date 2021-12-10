@@ -1,50 +1,31 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import ModalImage from "react-modal-image";
-import Star from "../Favorites/Star";
-import Loading from "../Loading";
+// import Star from "./Star";
 
-const apiKey = process.env.REACT_APP_APOD_KEY;
-
-export default function Media() {
-
-    const [mediaData, setMediaData] = useState(null);
-
-    useEffect(() => {
-        const abortController = new AbortController();
-        const opts = { signal: abortController.signal };
-
-        fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&count=18`, opts)
-            .then((response) => response.json())
-            .then((data) => setMediaData(data))
-            .catch((error) => console.log(error.message));
-        return () => abortController.abort();
-
-    }, []);
-
-    if (!mediaData) return <Loading />;
+export default function Media(props) {
 
     return (
         <section>
             <Box>
                 <button onClick={() => window.location.reload(false)} type="button">Randomize!</button>
                 <Grid>
-                    {mediaData.map((mediaData, star) => (
+                    {props.media.map((media, star) => (
                         <div className="card" key={star}>
-                            {mediaData.media_type === "image" ? (
-                                    <ModalImage
-                                        small={mediaData.url}
-                                        large={mediaData.hdurl}
-                                        hideDownload={true}
-                                        showRotate={true}
-                                        alt={mediaData.title}
-                                        className="image"
-                                        loading="lazy"
-                                    />
+                            {media.media_type === "image" ? (
+                                <ModalImage
+                                    small={media.url}
+                                    large={media.hdurl}
+                                    hideDownload={true}
+                                    showRotate={true}
+                                    alt={media.title}
+                                    className="image"
+                                    loading="lazy"
+                                />
                             ) : (
                                 <iframe
                                     title="space-video"
-                                    src={mediaData.url}
+                                    src={media.url}
                                     frameBorder="0"
                                     allow="encrypted-media"
                                     className="video"
@@ -52,9 +33,14 @@ export default function Media() {
                                 />
                             )}
                             <div className="card-container">
-                                <CardText>{mediaData.date}</CardText>
-                                <Title>{mediaData.title}</Title>
-                                <Star />
+                                <CardText>{media.date}</CardText>
+                                <Title>{media.title}</Title>
+
+                                {/* <span
+                                    onClick={() => props.handleStarClick(media)}
+                                >
+                                    <Star />
+                                </span> */}
                             </div>
                         </div>
                     ))}

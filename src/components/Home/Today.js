@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import ModalImage from "react-modal-image";
-import Star from "../Favorites/Star";
+// import Star from "../Browse/Star";
 import Loading from "../Loading";
 
 const apiKey = process.env.REACT_APP_APOD_KEY;
@@ -48,7 +48,7 @@ export default function Today() {
                         />
                     )}
                     <div className="card-container">
-                        <Star />
+                        {/* <Star /> */}
                         <CardText>{mediaData.explanation}</CardText>
                         <CardText>{mediaData.copyright}</CardText>
                     </div>
